@@ -1,0 +1,308 @@
+<html>
+  <head>
+    <style>
+
+    body { margin: 0px;
+
+    }
+
+    .logo { display: block;
+            width: 150px;
+    }
+
+    .header { display: flex;
+              align-items: center;
+              justify-content: center;
+              z-index: 1;
+              position: fixed;
+              top: 0px;
+              width: 100%;
+              padding-top: 50px;
+    }
+
+    .wrapper{ width: 100%;
+              height: 5000px;
+              display: grid;
+              /* grid-template-rows: repeat(auto-fill, 100vh [col-start] minmax(400px, 800px) [col-end]); */
+              grid-template-columns: 2fr 500px 2fr;
+              overflow: scroll;
+              background: url(assets/back.svg);
+              background-repeat: no-repeat;
+              background-size: cover;
+
+    }
+
+    .hours { display: block;
+             grid-column: 2/3;
+             width: 100%;
+             padding-top: 50vh;
+
+
+    }
+
+    .recp { display: block;
+             grid-column: 2/3;
+             width: 100%;
+             padding-top: 50vh;
+
+    }
+    .date { display: block;
+             grid-column: 2/3;
+             width: 100%;
+             /* padding-top: 400px; */
+    }
+
+    .exhibition { display: block;
+                grid-column: 2/3;
+                width: 100%;
+    }
+
+    .name {     display: block;
+                grid-column: 2/3;
+                width: 100%;
+                /* grid-template-rows:200px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ; */
+    }
+
+
+
+
+    .sunset {   display: flex;
+                grid-column: 2/3;
+                width: 100%;
+                height: 100vh;
+                justify-content: center;
+                align-items: flex-end;
+    }
+
+    .sunset img {   display: block;
+                    width: 30px;
+                    vertical-align: bottom;
+                    transition: 0.5s all;
+                    padding-bottom: 50px;
+
+
+
+    }
+
+    .name a:hover { -webkit-filter: drop-shadow( -0.5px -0.5px 2px white);
+                      filter: drop-shadow(  -0.5px -0.5px  2px white);
+
+    }
+
+    .name img:first-child:hover {-webkit-filter: none;
+                      filter: none;
+
+    }
+
+    /* .sunset img:hover {   display: block;
+                          width: 40px;
+                          transition: 0.5s all;
+                          vertical-align: bottom;
+
+
+
+
+    } */
+
+    .sunrise {   display: flex;
+                grid-column: 2/3;
+                width: 100%;
+                grid-row: 10/11;
+                justify-content: center;
+                align-items: flex-end;
+                padding-bottom: 50px;
+    }
+
+    .sunrise img {   display: block;
+                    width: 30px;
+                    vertical-align: bottom;
+                    transition: 0.5s all;
+
+
+
+    }
+/*
+    .sunrise img:hover {   display: block;
+                          width: 40px;
+                          transition: 0.5s all;
+                          vertical-align: bottom;
+
+
+
+
+    } */
+
+    .sponsor { display: block;
+            grid-column: 2/3;
+             width: 100%;
+             grid-row: 9/10;
+             /* padding-top: 90vh; */
+             padding-top: 50vh;
+
+             padding-left: 10px;
+             /* grid-template-rows: 100px, 100px; */
+    }
+
+    .exb { padding-bottom: 100px;
+            padding-top: 50vh;
+
+    }
+
+    #sunrise_logo { cursor: pointer;
+                    padding-top: 90vh;
+
+    }
+
+    @media only screen and (max-width: 320px) {
+      .wrapper{ width: 100%;
+                height: 20000px;
+                display: grid;
+                /* grid-template-rows: repeat(auto-fill, 100vh [col-start] minmax(400px, 1fr) [col-end]); */
+                grid-template-columns: 0px 1fr 0px;
+                overflow: scroll;
+                background: url(assets/back.svg);
+                background-repeat: no-repeat;
+                background-size: cover;
+
+      }
+
+
+}
+
+
+
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+      integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+      crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+    <div class="wrapper">
+
+
+      <div class="header" >
+        <img class="logo" src="assets/logo.svg">
+      </div>
+
+      <div class="sunset">
+        <!-- <img  id="sunset_logo" src="assets/sunset.svg"> -->
+      </div>
+
+      <div class="date">
+        <img class="pausable" src="assets/date.svg" >
+      </div>
+
+      <!-- <div class="exhibition">
+        <img src="assets/exhibition_by.svg">
+      </div> -->
+
+      <div class="name" >
+        <img class="exb" src="assets/exhibition_by.svg">
+
+        <a href="http://www.alanchankl.com" target="_blank">
+          <img class="pausable" src="assets/alan.svg" >
+        </a>
+
+        <a href="http://www.arielletse.com" target="_blank">
+          <img class="pausable" src="assets/arielle.svg" >
+        </a>
+
+        <a href="http://www.limbobchan.com" target="_blank">
+          <img class="pausable" src="assets/limbob.svg" >
+        </a>
+
+
+        <a href="http://www.cyrushung.com" target="_blank">
+          <img class="pausable" src="assets/cyrus.svg" >
+        </a>
+
+        <a href="http://www.eunicetsang.com" target="_blank">
+          <img class="pausable" src="assets/eunice.svg" >
+        </a>
+
+        <a href="http://www.james-ng.format.com" target="_blank">
+          <img class="pausable" src="assets/james.svg" >
+        </a>
+
+        <a href="http://www.katharinetsang.com" target="_blank">
+          <img class="pausable" src="assets/katharine.svg" >
+        </a>
+
+        <a href="mailto:kintingli.9000@gmail.com">
+          <img class="pausable" src="assets/kinting.svg" >
+        </a>
+      </div>
+
+      <div class="recp">
+        <img class="pausable" src="assets/reception.svg">
+      </div>
+
+
+      <div class="hours">
+        <img class="pausable" src="assets/hours.svg">
+      </div>
+
+      <div class="sponsor">
+        <img class="pausable" src="assets/sponsor.svg">
+        <img class="pausable" src="assets/support.svg">
+      </div>
+
+      <div class="sunrise">
+        <img  id="sunrise_logo" src="assets/sunrise.svg">
+      </div>
+
+     </div>
+
+
+
+
+  </body>
+
+<script>
+
+// $(document).ready(function(){
+//     $(this).scrollTop(0);
+//     page.stop;
+// });
+
+
+var page = $("html, body");
+var scroll = false;
+
+
+
+
+// $("#sunset_logo").click(function() {
+  page.animate(
+      { scrollTop: "5000"},
+      50000, "linear");
+
+
+
+// });
+
+  $("img").hover(
+  function() {
+    $("html, body").stop();
+  }, function() {
+    $("html, body").animate(
+        { scrollTop: "5000"},
+        50000, "linear");
+  }
+  );
+
+
+$("#sunrise_logo").click(function() {
+  page.animate(
+      { scrollTop: "0"},
+      3000, "linear");
+});
+
+  </script>
+
+</html>
