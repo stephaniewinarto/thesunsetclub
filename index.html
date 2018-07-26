@@ -29,7 +29,6 @@
               background: url(assets/back.svg);
               background-repeat: no-repeat;
               background-size: cover;
-
     }
 
     .hours { display: block;
@@ -153,24 +152,109 @@
 
     }
 
-    @media only screen and (max-width: 320px) {
+    @media only screen and (max-width: 414px) {
+
+      body { margin: 0px;
+
+      }
       .wrapper{ width: 100%;
-                height: 20000px;
+                height: 1000px;
                 display: grid;
                 /* grid-template-rows: repeat(auto-fill, 100vh [col-start] minmax(400px, 1fr) [col-end]); */
                 grid-template-columns: 0px 1fr 0px;
                 overflow: scroll;
                 background: url(assets/back.svg);
-                background-repeat: no-repeat;
                 background-size: cover;
+                background-repeat: no-repeat;
+                /* background-size: 100% 100%; */
+      }
+
+      .logo { display: block;
+              width: 85px;
+      }
+
+      .header { display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1;
+                position: fixed;
+                top: 0px;
+                width: 100%;
+                padding-top: 30px;
+      }
+
+      .hours { display: block;
+               grid-column: 2/3;
+               width: 100%;
+      }
+      .recp { display: block;
+               grid-column: 2/3;
+               width: 100%;
+
+      }
+      .date { display: block;
+               grid-column: 2/3;
+               width: 100%;
+      }
+
+      .exhibition { display: block;
+                    grid-column: 2/3;
+                    width: 100%;
+      }
+
+      .name {     display: block;
+                  grid-column: 2/3;
+                  width: 100%;
+      }
+
+      .sunset img {   display: block;
+                      width: 30px;
+                      vertical-align: bottom;
+                      transition: 0.5s all;
 
       }
 
+      .name a:hover { -webkit-filter: drop-shadow( -0.5px -0.5px 2px white);
+                        filter: drop-shadow(  -0.5px -0.5px  2px white);
 
+      }
+
+      .name img:first-child:hover {-webkit-filter: none;
+                        filter: none;
+
+      }
+
+      .sunrise {   display: flex;
+                  grid-column: 2/3;
+                  width: 100%;
+                  grid-row: 10/11;
+                  justify-content: center;
+                  align-items: flex-end;
+                  padding-bottom: 50px;
+      }
+
+      .sunrise img {   display: block;
+                      width: 30px;
+                      vertical-align: bottom;
+
+      }
+
+      .sponsor { display: block;
+                 grid-column: 2/3;
+                 width: 100%;
+                 grid-row: 9/10;
+                 padding-left: 5px;
+      }
+
+      .exb {  padding-bottom: 50px;
+              /* padding-top: 50vh; */
+
+      }
+
+      #sunrise_logo { cursor: pointer;
+                      padding-top: 90vh;
+      }
 }
-
-
-
     </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -190,16 +274,11 @@
       </div>
 
       <div class="sunset">
-        <!-- <img  id="sunset_logo" src="assets/sunset.svg"> -->
       </div>
 
       <div class="date">
         <img class="pausable" src="assets/date.svg" >
       </div>
-
-      <!-- <div class="exhibition">
-        <img src="assets/exhibition_by.svg">
-      </div> -->
 
       <div class="name" >
         <img class="exb" src="assets/exhibition_by.svg">
