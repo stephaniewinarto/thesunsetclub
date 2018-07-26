@@ -10,6 +10,7 @@
 
     .logo { display: block;
             width: 150px;
+            cursor: pointer;
     }
 
     .header { display: flex;
@@ -23,7 +24,7 @@
     }
 
     .wrapper{ width: 100%;
-              height: 5000px;
+              /* height: 5000px; */
               display: grid;
               /* grid-template-rows: repeat(auto-fill, 100vh [col-start] minmax(400px, 800px) [col-end]); */
               grid-template-columns: 2fr 500px 2fr;
@@ -36,7 +37,7 @@
     .hours { display: block;
              grid-column: 2/3;
              width: 100%;
-             padding-top: 50vh;
+             padding-top: 20vh;
 
 
     }
@@ -44,13 +45,12 @@
     .recp { display: block;
              grid-column: 2/3;
              width: 100%;
-             padding-top: 50vh;
+             padding-top: 20vh;
 
     }
     .date { display: block;
              grid-column: 2/3;
              width: 100%;
-             /* padding-top: 400px; */
     }
 
     .exhibition { display: block;
@@ -61,11 +61,7 @@
     .name {     display: block;
                 grid-column: 2/3;
                 width: 100%;
-                /* grid-template-rows:200px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ; */
     }
-
-
-
 
     .sunset {   display: flex;
                 grid-column: 2/3;
@@ -75,15 +71,6 @@
                 align-items: flex-end;
     }
 
-    .sunset img {   display: block;
-                    width: 30px;
-                    vertical-align: bottom;
-                    transition: 0.5s all;
-                    padding-bottom: 50px;
-
-
-
-    }
 
     .name a:hover { -webkit-filter: drop-shadow( -0.5px -0.5px 2px white);
                       filter: drop-shadow(  -0.5px -0.5px  2px white);
@@ -138,14 +125,14 @@
              width: 100%;
              grid-row: 9/10;
              /* padding-top: 90vh; */
-             padding-top: 50vh;
+             padding-top: 20vh;
 
              padding-left: 10px;
              /* grid-template-rows: 100px, 100px; */
     }
 
-    .exb { padding-bottom: 100px;
-            padding-top: 50vh;
+    .exb { padding-bottom: 50px;
+            padding-top: 30vh;
 
     }
 
@@ -153,26 +140,30 @@
                     padding-top: 90vh;
 
     }
+    .sampleClass {float:left;}
 
     @media only screen and (max-width: 667px) {
+
+      .sampleClass {float:none;}
 
       body { margin: 0px;
 
       }
       .wrapper{ width: 100%;
-                height: 1000px;
+                /* height: 1000px; */
                 display: grid;
                 /* grid-template-rows: repeat(auto-fill, 100vh [col-start] minmax(400px, 1fr) [col-end]); */
                 grid-template-columns: 0px 100% 0px;
                 overflow: scroll;
-                background: url(assets/back.svg);
+                background: url(assets/mobile.svg);
                 background-size: cover;
-                background-repeat: 100% 100%;
+                background-repeat: no-repeat;
                 /* background-size: 100% 100%; */
       }
 
       .logo { display: block;
               width: 29vw;
+              cursor: pointer;
       }
 
       .header { display: flex;
@@ -207,6 +198,14 @@
       .name {     display: block;
                   grid-column: 2/3;
                   width: 100%;
+      }
+
+      .sunset {   display: flex;
+                  grid-column: 2/3;
+                  width: 100%;
+                  height: 32vh;
+                  justify-content: center;
+                  align-items: flex-end;
       }
 
       .sunset img {   display: block;
@@ -272,7 +271,7 @@
 
 
       <div class="header" >
-        <img class="logo" src="assets/logo.svg">
+        <img class="logo" id="sunset_logo" src="assets/logo.svg">
       </div>
 
       <div class="sunset">
@@ -340,49 +339,101 @@
      </div>
 
 
+ <div class="sampleClass"> </div>
+
 
 
   </body>
 
 <script>
 
-// $(document).ready(function(){
-//     $(this).scrollTop(0);
-//     page.stop;
-// });
 
 
 var page = $("html, body");
-var scroll = false;
+
+
+    checkSize();
+    // run test on resize of the window
+    $(window).resize(checkSize);
 
 
 
+//Function to the css rule
+function checkSize(){
+    if ($(".sampleClass").css("float") == "left" ){
+      console.log("hello");
 
-// $("#sunset_logo").click(function() {
-  page.animate(
-      { scrollTop: "5000"},
-      50000, "linear");
+    page.animate(
+            { scrollTop: "5000"},
+            40000, "linear");
+
+        $("img").hover(
+        function() {
+          page.stop();
+        }, function() {
+           page.animate(
+              { scrollTop: "5000"},
+              40000, "linear");
+        }
+        );
+
+      $("#sunrise_logo").click(function() {
+        page.animate(
+            { scrollTop: "0px"},
+            300, "linear");
+      });
+
+      $("#sunset_logo").click(function() {
+        page.animate(
+            { scrollTop: "0px"},
+            300, "linear");
+      });
+
+
+}
+
+if ($(".sampleClass").css("float") == "none" ){
+  console.log("hello");
+  page.stop();
+
+  $("#sunrise_logo").click(function() {
+    page.animate(
+        { scrollTop: "0px"},
+        300, "linear");
+  });
+
+
+        $("#sunset_logo").click(function() {
+          page.animate(
+              { scrollTop: "0px"},
+              300, "linear");
+        });
+
+// page.animate(
+//         { scrollTop: "4000"},
+//         20000, "linear");
+//
+//     $("img").hover(
+//     function() {
+//       page.stop();
+//     }, function() {
+//        page.animate(
+//           { scrollTop: "4000"},
+//           20000, "linear");
+//     }
+//     );
+//
+//   $("#sunrise_logo").click(function() {
+//     page.animate(
+//         { scrollTop: "0px"},
+//         300, "linear");
+//   });
+
+}
+}
 
 
 
-// });
-
-  $("img").hover(
-  function() {
-    $("html, body").stop();
-  }, function() {
-    $("html, body").animate(
-        { scrollTop: "5000"},
-        50000, "linear");
-  }
-  );
-
-
-$("#sunrise_logo").click(function() {
-  page.animate(
-      { scrollTop: "0px"},
-      2000, "linear");
-});
 
   </script>
 
