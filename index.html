@@ -71,6 +71,12 @@
                 align-items: flex-end;
     }
 
+    .links {   display: block;
+               grid-column: 2/3;
+               width: 100%;
+               padding-top: 20vh;
+    }
+
 
     .name a:hover { -webkit-filter: drop-shadow( -0.5px -0.5px 2px white);
                       filter: drop-shadow(  -0.5px -0.5px  2px white);
@@ -81,6 +87,7 @@
                       filter: none;
 
     }
+
 
     .sunrise {   display: flex;
                 grid-column: 2/3;
@@ -99,26 +106,13 @@
 
 
     }
-/*
-    .sunrise img:hover {   display: block;
-                          width: 40px;
-                          transition: 0.5s all;
-                          vertical-align: bottom;
-
-
-
-
-    } */
 
     .sponsor { display: block;
-            grid-column: 2/3;
-             width: 100%;
-             grid-row: 9/10;
-             /* padding-top: 90vh; */
-             padding-top: 20vh;
-
-             padding-left: 10px;
-             /* grid-template-rows: 100px, 100px; */
+               grid-column: 2/3;
+               width: 100%;
+               grid-row: 9/10;
+               padding-top: 20vh;
+               padding-left: 10px;
     }
 
     .exb { padding-bottom: 50px;
@@ -140,7 +134,9 @@
 
       }
       .wrapper{ width: 100%;
+                /* height: 1000px; */
                 display: grid;
+                /* grid-template-rows: repeat(auto-fill, 100vh [col-start] minmax(400px, 1fr) [col-end]); */
                 grid-template-columns: 0px 100% 0px;
                 overflow: scroll;
                 background: url(assets/mobile.svg);
@@ -235,6 +231,14 @@
                  padding-left: 5px;
       }
 
+      .links {   display: block;
+                 grid-column: 2/3;
+                 width: 100%;
+      }
+
+
+
+
       .exb {  padding-bottom: 50px;
               /* padding-top: 50vh; */
 
@@ -256,6 +260,7 @@
 
   <body>
     <div class="wrapper">
+
 
       <div class="header" >
         <img class="logo" id="sunset_logo" src="assets/logo.svg">
@@ -319,6 +324,24 @@
         <img class="pausable" src="assets/support.svg">
       </div>
 
+      <div class="links">
+        <a href="assets/press.pdf" target="blank">
+        <img class="pausable" src="assets/press.svg">
+      </a>
+
+      <a href="mailto:thesunsetclubhk@gmail.com" target="blank">
+        <img class="pausable" src="assets/email.svg">
+      </a>
+
+      <a href="https://www.facebook.com/thesunsetclubhk/" target="blank">
+        <img class="pausable" src="assets/facebook.svg">
+      </a>
+
+      <a href="https://www.instagram.com/thesunsetclubhk/?hl=en" target="blank">
+        <img class="pausable" src="assets/instagram.svg">
+      </div>
+    </a>
+
       <div class="sunrise">
         <img  id="sunrise_logo" src="assets/sunrise.svg">
       </div>
@@ -337,15 +360,15 @@
 
 
 var page = $("html, body");
-//if you're reading this, you MUST SEND THIS WEBSITE TO 5 OTHER FRIENDS or suffer bad luck for the next 7 years and have non-accidentals death happen in your family every third generation. 
 
 
-  
     checkSize();
+    // run test on resize of the window
     $(window).resize(checkSize);
 
 
 
+//Function to the css rule
 function checkSize(){
     if ($(".sampleClass").css("float") == "left" ){
       console.log("hello");
@@ -395,7 +418,6 @@ if ($(".sampleClass").css("float") == "none" ){
               { scrollTop: "0px"},
               300, "linear");
         });
-
 
 }
 }
